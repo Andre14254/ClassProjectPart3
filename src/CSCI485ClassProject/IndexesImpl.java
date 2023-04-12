@@ -24,7 +24,7 @@ public class IndexesImpl implements Indexes{
   public StatusCode createIndex(String tableName, String attrName, IndexType indexType) {
     // your code
     Transaction tx = FDBHelper.openTransaction(db);
-    if (!FDBHelper.doesSubdirectoryExists(tx, db) {
+    if (!FDBHelper.doesSubdirectoryExists(tx, db)) {
       FDBHelper.abortTransaction(tx);
       return StatusCode.TABLE_NOT_FOUND;
     }
@@ -32,7 +32,7 @@ public class IndexesImpl implements Indexes{
     table.add(tableName);
     table.add(attrName);
     table.add("i");
-    if (FDBHelper.doesSubdirectoryExists(tx, table) {
+    if (FDBHelper.doesSubdirectoryExists(tx, table)) {
       FDBHelper.abortTransaction(tx);
       return StatusCode.INDEX_ALREADY_EXISTS_ON_ATTRIBUTE;
     }
