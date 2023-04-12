@@ -11,6 +11,7 @@ import com.apple.foundationdb.directory.PathUtil;
 import com.apple.foundationdb.tuple.Tuple;
 import CSCI485ClassProject.fdb.FDBHelper;
 import CSCI485ClassProject.fdb.FDBKVPair;
+import CSCI485ClassProject.models.Record;
 
 import java.util.ArrayList;
 import java.util.List;
