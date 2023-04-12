@@ -37,6 +37,9 @@ public class IndexesImpl implements Indexes{
       return StatusCode.INDEX_ALREADY_EXISTS_ON_ATTRIBUTE;
     }
     DirectorySubspace dir = FDBHelper.createOrOpenSubspace(tx, table);
+    records = new RecordsImpl();
+    Cursor cursor = records.openCursor(tableName, Cursor.Mode.READ);
+    Record rec = records.getFirst(cursor);
     while (true) {
       rec = records.getNext(cursor);
       if (rec == null) {
