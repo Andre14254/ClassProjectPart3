@@ -50,12 +50,12 @@ public class IndexesImpl implements Indexes{
       kt.add(rec.getValueForGivenAttrName(attrName).hashCode());
       FDBHelper.setFDBKVPair(dir, tx, new FDBKVPair(table, kt, new Tuple()));
     }
-    return null;
+    return StatusCode.SUCCESS;
   }
 
   @Override
   public StatusCode dropIndex(String tableName, String attrName) {
     // your code
-    return null;
+    return StatusCode.SUCCESS;
   }
 }
