@@ -60,8 +60,7 @@ public class IndexesImpl implements Indexes{
     List<String> table = new ArrayList<>();
     table.add(tableName);
     table.add(attrName);
-    FDBHelper.openSubspace(tx, table);
-    FDBHelper.dropSubspace(tx, table);
+    //FDBHelper.dropSubspace(tx, table);
     FDBHelper.commitTransaction(tx);
     return StatusCode.SUCCESS;
   }
