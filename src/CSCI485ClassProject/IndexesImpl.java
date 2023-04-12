@@ -25,10 +25,10 @@ public class IndexesImpl implements Indexes{
   public StatusCode createIndex(String tableName, String attrName, IndexType indexType) {
     // your code
     Transaction tx = FDBHelper.openTransaction(db);
-    if (!FDBHelper.doesSubdirectoryExists(tx, db)) {
-      FDBHelper.abortTransaction(tx);
-      return StatusCode.TABLE_NOT_FOUND;
-    }
+    //if (!FDBHelper.doesSubdirectoryExists(tx, tableName)) {
+   //   FDBHelper.abortTransaction(tx);
+    //  return StatusCode.TABLE_NOT_FOUND;
+   // }
     List<String> table = new ArrayList<>();
     table.add(tableName);
     table.add(attrName);
