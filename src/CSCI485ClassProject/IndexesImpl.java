@@ -61,7 +61,6 @@ public class IndexesImpl implements Indexes{
     table.add(tableName);
     table.add(attrName);
     FDBHelper.dropSubspace(tx, table);
-    FDBHelper.commitTransaction(tx);
     return StatusCode.SUCCESS;
   }
 }
